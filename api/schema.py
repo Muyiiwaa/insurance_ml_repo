@@ -16,7 +16,13 @@ class UserRequest(BaseModel):
     smoker: Literal['yes','no'] = Field(..., description="Does the client smoke?.",
                      examples=["yes"])
     region: Literal['northeast','northwest',
-                    'southeast','southwest'] = Field(..., description="gender of the client.",
-                     examples=["female"])
+                    'southeast','southwest'] = Field(..., description="what is the zone of the client.",
+                     examples=["northeast"])
+    
+
+# create the response object
+class ModelResponse(BaseModel):
+    message: str = Field(..., 
+                         examples=["This user's charges is predicted to be $5.67"])
     
     
